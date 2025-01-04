@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #27ae60;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 1100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-box {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.hotel-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-box h2 {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: bold;
+}
+
+.hotel-box p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.hotel-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.gallery img {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+iframe {
+    border: 0;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+h3 {
+    color: #333;
+    margin-top: 20px;
+    font-size: 1.6em;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+ul li {
+    margin: 5px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.price {
+    font-size: 1.2em;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.room-selection {
+    margin-top: 20px;
+}
+
+.room-selection select {
+    font-size: 1.2em;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.room-selection button {
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.room-selection button:hover {
+    background-color: #3498db;
+}
+
+.confirmation-message {
+    text-align: center;
+    font-size: 1.5em;
+    color: #2ecc71;
+    margin-top: 50px;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hotels</h1>
+        <nav>
+            <ul>
+                <li><a href="#hotel1">Hotel 1</a></li>
+                <li><a href="#hotel2">Hotel 2</a></li>
+                <li><a href="#hotel3">Hotel 3</a></li>
+                <li><a href="#hotel4">Hotel 4</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hotel1" class="hotel-box">
+        <h2>Hotel 1</h2>
+        <p><strong>Location:</strong> Riyadh, Saudi Arabia</p>
+        <p><strong>Description:</strong> A luxurious 5-star hotel offering excellent services.</p>
+        <p><strong>Facilities:</strong> Swimming pool, gym, fine dining restaurant, free Wi-Fi</p>
+        <img src="imge/hote1.webp" alt="Hotel 1" class="hotel-img">
+        <h3>Image Gallery</h3>
+        <div class="gallery">
+            <img src="imge/h.img1.jpg" alt="Hotel 1 Room">
+            <img src="imge/h.imge3.webp" alt="Hotel 1 Pool">
+        </div>
+        <h3>Location Map</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=..." width="300" height="300"></iframe>
+        <h3>Reviews</h3>
+        <p>Rating: 4.5/5</p>
+        <h3>Room Types</h3>
+        <div class="room-selection">
+            <select id="room-selection1">
+                <option value="single">Single Room - $133</option>
+                <option value="double">Double Room - $213</option>
+                <option value="suite">Luxury Suite - $320</option>
+            </select>
+            <button onclick="confirmBooking('Hotel 1')">Proceed to Car Booking</button>
+        </div>
+    </section>
+
+    <section id="hotel2" class="hotel-box">
+        <h2>Hotel 2</h2>
+        <p><strong>Location:</strong> Jeddah, Saudi Arabia</p>
+        <p><strong>Description:</strong> A comfortable and modern hotel located near the beach.</p>
+        <p><strong>Facilities:</strong> 24-hour room service, spa, international restaurants</p>
+        <img src="imge/hote2.webp" alt="Hotel 2" class="hotel-img">
+        <h3>Image Gallery</h3>
+        <div class="gallery">
+            <img src="imge/h2.img1.jpg" alt="Hotel 2 Room">
+            <img src="imge/h2.img2.webp" alt="Hotel 2 Beach">
+        </div>
+        <h3>Location Map</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=..." width="300" height="300"></iframe>
+        <h3>Reviews</h3>
+        <p>Rating: 4.8/5</p>
+        <h3>Room Types</h3>
+        <div class="room-selection">
+            <select id="room-selection2">
+                <option value="single">Single Room - $160</option>
+                <option value="double">Double Room - $250</option>
+                <option value="suite">Luxury Suite - $400</option>
+            </select>
+            <button onclick="confirmBooking('Hotel 2')">Proceed to Car Booking</button>
+        </div>
+    </section>
+
+    <section id="hotel3" class="hotel-box">
+        <h2>Hotel 3</h2>
+        <p><strong>Location:</strong> Dubai, UAE</p>
+        <p><strong>Description:</strong> A luxurious hotel with stunning sea views.</p>
+        <p><strong>Facilities:</strong> Outdoor swimming pool, airport transfer service, specialty restaurants</p>
+        <img src="imge/hote3.jpg" alt="Hotel 3" class="hotel-img">
+        <h3>Image Gallery</h3>
+        <div class="gallery">
+            <img src="imge/h3.imge1.jpg" alt="Hotel 3 Room">
+            <img src="imge/h3.imge2.jpg" alt="Hotel 3 Beach">
+        </div>
+        <h3>Location Map</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=..." width="300" height="300"></iframe>
+        <h3>Reviews</h3>
+        <p>Rating: 4.9/5</p>
+        <h3>Room Types</h3>
+        <div class="room-selection">
+            <select id="room-selection3">
+                <option value="single">Single Room - $187</option>
+                <option value="double">Double Room - $267</option>
+                <option value="suite">Luxury Suite - $480</option>
+            </select>
+            <button onclick="confirmBooking('Hotel 3')">Proceed to Car Booking</button>
+        </div>
+    </section>
+
+    <section id="hotel4" class="hotel-box">
+        <h2>Hotel 4</h2>
+        <p><strong>Location:</strong> Abu Dhabi, UAE</p>
+        <p><strong>Description:</strong> An elegant hotel located in the heart of the city with excellent facilities.</p>
+        <p><strong>Facilities:</strong> Shopping center, massage services, fully equipped gym</p>
+        <img src="imge/hote4.avif" alt="Hotel 4" class="hotel-img">
+        <h3>Image Gallery</h3>
+        <div class="gallery">
+            <img src="imge/h4.img2.jpg" alt="Hotel 4 Room">
+            <img src="imge/h4.imge1.jpeg" alt="Hotel 4 Pool">
+        </div>
+        <h3>Location Map</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=..." width="300" height="300"></iframe>
+        <h3>Reviews</h3>
+        <p>Rating: 4.7/5</p>
+        <h3>Room Types</h3>
+        <div class="room-selection">
+            <select id="room-selection4">
+                <option value="single">Single Room - $173</option>
+                <option value="double">Double Room - $240</option>
+                <option value="suite">Luxury Suite - $427</option>
+            </select>
+            <button onclick="confirmBooking('Hotel 4')">Proceed to Car Booking</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function confirmBooking(hotelName) {
+            if (confirm("Are you sure you want to confirm your booking for " + hotelName + "?")) {
+                window.location.href = 'تأجير السيارات.html';
+            }
+        }
+    </script>
+
+</body>
+</html>

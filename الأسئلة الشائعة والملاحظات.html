@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs & Feedback</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(45deg, #1a73e8, #4CAF50);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 28px;
+            color: #1a73e8;
+            border-bottom: 3px solid #1a73e8;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        
+        .faq {
+            margin-bottom: 20px;
+        }
+
+        .faq h3 {
+            font-size: 20px;
+            color: #4CAF50;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .faq p {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .faq.active p {
+            display: block;
+        }
+
+        
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .feedback-form label {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea,
+        .feedback-form button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .feedback-form textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .feedback-form button {
+            background-color: #1a73e8;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .feedback-form button:hover {
+            background-color: #155cb0;
+        }
+
+        
+        .rating-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .rating-label {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .rating-stars {
+            display: inline-flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .rating-stars input {
+            display: none;
+        }
+
+        .rating-stars label {
+            font-size: 30px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .rating-stars input:checked ~ label,
+        .rating-stars input:hover ~ label {
+            color: #f39c12;
+        }
+
+        .thank-you-message {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: linear-gradient(45deg, #4CAF50, #1a73e8);
+            color: white;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FAQs & Feedback</h1>
+    </header>
+    <main>
+        
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+                <h3>What is your cancellation policy?</h3>
+                <p>You can cancel your ticket up to 24 hours before departure with a full refund.</p>
+            </div>
+            <div class="faq">
+                <h3>Can I change my flight date?</h3>
+                <p>Yes, flight dates can be changed up to 48 hours before the departure, subject to availability.</p>
+            </div>
+            <div class="faq">
+                <h3>Do you offer discounts for group bookings?</h3>
+                <p>We offer special discounts for groups of 10 or more passengers. Contact our support team for more details.</p>
+            </div>
+        </section>
+
+        <!-- Rating Section -->
+        <section>
+            <h2>Rate Our Application</h2>
+            <div class="rating-section">
+                <label class="rating-label" for="rating">Please rate our app:</label>
+                <div class="rating-stars">
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1">&#9733;</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">&#9733;</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">&#9733;</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">&#9733;</label>
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5">&#9733;</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section>
+            <h2>Customer Feedback</h2>
+            <form class="feedback-form">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="feedback">Your Feedback</label>
+                <textarea id="feedback" name="feedback" placeholder="Write your feedback here" required></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+
+            <div class="thank-you-message">
+                <p>شكرًا لاستخدامك تطبيقنا!</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>©️ 2025 All Rights Reserved for Airline Company</p>
+    </footer>
+
+    <script>
+        
+        const faqs = document.querySelectorAll('.faq h3');
+        faqs.forEach(faq => {
+            faq.addEventListener('click', () => {
+                faq.parentElement.classList.toggle('active');
+            });
+        });
+
+        
+        const feedbackForm = document.querySelector('.feedback-form');
+        feedbackForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your feedback!');
+            feedbackForm.reset();
+        });
+    </script>
+</body>
+</html>

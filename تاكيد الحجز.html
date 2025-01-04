@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            background: url(image/baground.jpg) no-repeat center center fixed; 
+            background-size: cover;
+            margin: 0;
+            color: #fff;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-top: 50px;
+            color: #fff;
+        }
+
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .summary {
+            margin-bottom: 30px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            color: #333;
+            text-align: center;
+        }
+
+        .summary p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .thank-you {
+            display: none;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .cancel-btn {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .cancel-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        .welcome-message {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 12px;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="welcome-message">
+        <p>أهلاً وسهلاً بك في تطبيق GlobeTrotter!</p>
+        <p>لإتمام تأكيد الحجز، يرجى ملء النموذج أدناه بتفاصيلك الشخصية وبيانات الدفع.</p>
+    </div>
+
+    <h1>Booking Confirmation</h1>
+    <div class="container">
+        <h2>Booking Details</h2>
+        <div class="summary">
+            <p><strong>Booking Dates:</strong> From January 15, 2025 to January 20, 2025</p>
+            <p><strong>Room Type:</strong> Double Room</p>
+            <p><strong>Number of People:</strong> 2 People</p>
+        </div>
+
+        <h2>Personal Information</h2>
+        <form id="bookingForm" method="POST" onsubmit="return confirmBooking()">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <h2>Payment Methods</h2>
+            <div class="form-group">
+                <label for="payment">Choose Payment Method:</label>
+                <select id="payment" name="payment" required>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bank-transfer">Bank Transfer</option>
+                </select>
+            </div>
+
+            <h2>Booking Confirmation Code</h2>
+            <div class="form-group">
+                <label for="confirmation-code">Confirmation Code:</label>
+                <input type="text" id="confirmation-code" name="confirmation-code" value="ABC123XYZ" readonly>
+            </div>
+
+            <button type="submit" class="btn">Confirm Booking</button>
+        </form>
+
+        <div id="thankYouMessage" class="thank-you">
+            <p>شكرًا لاختيارك <strong>GlobeTrotter</strong>! نحن سعداء بتأكيد حجزك، ونتمنى لك رحلة ممتعة ومليئة بالتجارب الرائعة.</p>
+
+            <button class="cancel-btn" onclick="cancelBooking()">Cancel Booking</button>
+        </div>
+    </div>
+
+    <script>
+        function confirmBooking() {
+            document.getElementById('bookingForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+            return false; 
+        }
+
+        function cancelBooking() {
+            alert('Your booking has been canceled.');
+            location.reload(); 
+        }
+    </script>
+
+</body>
+</html>

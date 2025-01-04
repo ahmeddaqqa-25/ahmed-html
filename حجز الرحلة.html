@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Famous Destinations</title>
+    <style>
+       
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0052cc; 
+    --secondary-color: #ff5c5c; 
+    --background-color: #ffffff; 
+    --card-background: #ffffff; 
+    --text-color: #333;
+    --link-color: #0066cc; 
+    --footer-bg-color: #003366; 
+    --button-color: #ff8a00; 
+    --hover-color: #ff3e00; 
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+.welcome-section {
+    background: var(--primary-color);
+    text-align: center;
+    padding: 50px 20px;
+    color: #fff;
+}
+
+.welcome-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+
+.destinations {
+    padding: 30px;
+    text-align: center;
+}
+
+.destinations h2 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.destination-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.destination-card {
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.info {
+    padding: 20px;
+    background: var(--card-background);
+}
+
+.info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.info p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.info strong {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+
+.button {
+    display: inline-block;
+    background-color: var(--button-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--hover-color);
+}
+
+.back-to-home {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    background-color: var(--footer-bg-color);
+}
+
+.back-button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: var(--primary-color);
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: var(--hover-color);
+    color: white;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+    .destination-cards {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .welcome-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .welcome-section p {
+        font-size: 1rem;
+    }
+
+    .destination-card img {
+        height: 200px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    
+    <header class="welcome-section">
+        <h1>Welcome to GlobeTrotter!</h1>
+        <p>Your journey to the world’s most beautiful destinations starts here.</p>
+    </header>
+
+   
+    <section class="destinations">
+        <h2>Please choose the flight you want...</h2>
+
+      
+        <div class="destination-cards">
+            <div class="destination-card">
+                <img src="image/Paris1.jpg" alt="Paris">
+                <div class="info">
+                    <h3>Paris</h3>
+                    <p>Paris is known for its rich culture, art, and historic landmarks like the Eiffel Tower and the Louvre Museum.</p>
+                    <p><strong>Trip Dates:</strong> From 2025-03-01 to 2025-03-07</p>
+                    <a href="حجز الفنادق.html" class="button">Select Trip</a>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <img src="image/New York.webp" alt="New York">
+                <div class="info">
+                    <h3>New York</h3>
+                    <p>New York City is famous for its skyscrapers, Times Square, and cultural diversity.</p>
+                    <p><strong>Trip Dates:</strong> From 2025-04-10 to 2025-04-20</p>
+                    <a href="حجز الفنادق.html" class="button">Select Trip</a>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <img src="image/Tokyo.jpg" alt="Tokyo">
+                <div class="info">
+                    <h3>Tokyo</h3>
+                    <p>Tokyo blends modern skyscrapers with traditional temples, offering a unique cultural experience.</p>
+                    <p><strong>Trip Dates:</strong> From 2025-05-01 to 2025-05-10</p>
+                    <a href="حجز الفنادق.html" class="button">Select Trip</a>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <img src="image/Dubai.jpg" alt="Dubai">
+                <div class="info">
+                    <h3>Dubai</h3>
+                    <p>Dubai is known for its luxurious lifestyle, towering skyscrapers, and modern shopping malls.</p>
+                    <p><strong>Trip Dates:</strong> From 2025-06-01 to 2025-06-10</p>
+                    <a href="حجز الفنادق.html" class="button">Select Trip</a>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <img src="image/Turkey.jpg" alt="Turkey">
+                <div class="info">
+                    <h3>Turkey</h3>
+                    <p>Turkey offers a unique blend of East and West, with stunning beaches, ancient ruins, and vibrant culture.</p>
+                    <p><strong>Trip Dates:</strong> From 2025-07-01 to 2025-07-15</p>
+                    <a href="حجز الفنادق.html" class="button">Select Trip</a>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <img src="image/Barcelona.jpg" alt="Barcelona">
+                <div class="info">
+                    <h3>Barcelona</h3>
+                    <p>Barcelona is famous for its beautiful architecture, beaches, and vibrant nightlife.</p>
+                    <p><strong>Trip Dates:</strong> From 2025-08-01 to 2025-08-10</p>
+                    <a href="حجز الفنادق.html" class="button">Select Trip</a>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <img src="image/Maldives.jpg" alt="Maldives">
+                <div class="info">
+                    <h3>Maldives</h3>
+                    <p>The Maldives is a tropical paradise known for its crystal-clear waters, overwater bungalows, and vibrant marine life.</p>
+                    <p><strong>Trip Dates:</strong> From 2025-09-01 to 2025-09-07</p>
+                    <a href="حجز الفنادق.html" class="button">Select Trip</a>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <img src="image/Sydney.jpg" alt="Sydney">
+                <div class="info">
+                    <h3>Sydney</h3>
+                    <p>Sydney is known for its iconic Opera House, beautiful beaches, and diverse culture.</p>
+                    <p><strong>Trip Dates:</strong> From 2025-10-01 to 2025-10-10</p>
+                    <a href="حجز الفنادق.html" class="button">Select Trip</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="back-to-home">
+        <a href="الصفحة الرئيسية.html" class="back-button" target="_blank">Back to Homepage</a>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers and Discounts</title>
+    <style>
+        
+        body {
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #444;
+        }
+
+        header {
+            background: linear-gradient(45deg, #4CAF50, #1a73e8);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .offers-section {
+            background-color: white;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            text-align: left;
+        }
+
+        .offers-section h2 {
+            font-size: 28px;
+            color: #4CAF50;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .offer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .offer:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .offer img {
+            width: 200px;
+            height: 130px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .offer-details {
+            font-size: 18px;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .offer-title {
+            font-size: 24px;
+            color: #1a73e8;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: linear-gradient(45deg, #1a73e8, #4CAF50);
+            color: white;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        
+        @media (max-width: 768px) {
+            .offer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .offer img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Airline Company</h1>
+        </div>
+    </header>
+    <main>
+        <section class="offers-section">
+            <h2>Offers and Discounts</h2>
+
+            <!-- Offer 1 -->
+            <div class="offer">
+                <img src="image/imgee1.jfif" alt="Offer 1 Image">
+                <div class="offer-details">
+                    <p class="offer-title">Seasonal Discounts</p>
+                    <p>Get 30% off on flights to Paris during the winter season.</p>
+                </div>
+            </div>
+
+            <!-- Offer 2 -->
+            <div class="offer">
+                <img src="image/imgee2.jfif" alt="Offer 2 Image">
+                <div class="offer-details">
+                    <p class="offer-title">Last-Minute Bookings</p>
+                    <p>Save up to 25% on last-minute bookings for the weekend!</p>
+                </div>
+            </div>
+
+            <!-- Offer 3 -->
+            <div class="offer">
+                <img src="image/imgee3.jfif" alt="Offer 3 Image">
+                <div class="offer-details">
+                    <p class="offer-title">Family Travel</p>
+                    <p>Travel with your family and get a free ticket for children under 12 years old.</p>
+                </div>
+            </div>
+
+            <!-- Offer 4 -->
+            <div class="offer">
+                <img src="image/imgee4.jfif" alt="Offer 4 Image">
+                <div class="offer-details">
+                    <p class="offer-title">New Destinations</p>
+                    <p>Discover our new destination: Cape Town with a 20% discount.</p>
+                </div>
+            </div>
+
+            <!-- Offer 5 -->
+            <div class="offer">
+                <img src="image/imgee5.jfif" alt="Offer 5 Image">
+                <div class="offer-details">
+                    <p class="offer-title">Student Offers</p>
+                    <p>Enjoy a 20% discount for students with valid university ID.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>©️ 2025 All Rights Reserved for Airline Company</p>
+    </footer>
+</body>
+</html>
